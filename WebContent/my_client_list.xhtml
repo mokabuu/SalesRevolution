@@ -17,7 +17,7 @@
 </h:head>
 <h:body
 	style="background-image:url('http://backgrounds-free.com/highresolution/l_100.png');">
-	<h:form>
+	<h:form style="z-index:0;">
 		<a href="./index.jsf"><input type="button" class='btn btn-primary'
 			value="戻る" /></a>
 		<div style="display: block; width: 100%;">
@@ -34,8 +34,9 @@
 				<div
 					style="display: block; margin-top: 10px; text-align: center; padding-bottom: 10px;">
 					<input type="button" class="btn btn-success" value="顧客情報編集" /> <input
-						type="button" class="btn btn-warning" value="TODO追加" /> <input
-						type="button" class="btn btn-default" value="営業を助ける" />
+						type="button" class="btn btn-warning" value="TODO追加"
+						onclick="PF('dlg1').show();" /> <input type="button"
+						class="btn btn-default" value="営業を助ける" />
 				</div>
 			</div>
 
@@ -52,7 +53,8 @@
 				<div
 					style="display: block; margin-top: 10px; text-align: center; padding-bottom: 10px;">
 					<input type="button" class="btn btn-success" value="顧客情報編集" /> <input
-						type="button" class="btn btn-warning" value="TODO追加" />
+						type="button" class="btn btn-warning" value="TODO追加"
+						onclick="PF('dlg1').show();" />
 				</div>
 			</div>
 
@@ -69,8 +71,9 @@
 				<div
 					style="display: block; margin-top: 10px; text-align: center; padding-bottom: 10px;">
 					<input type="button" class="btn btn-success" value="顧客情報編集" /> <input
-						type="button" class="btn btn-warning" value="TODO追加" /> <input
-						type="button" class="btn btn-danger" value="問い合わせ確認" />
+						type="button" class="btn btn-warning" value="TODO追加"
+						onclick="PF('dlg1').show();" /> <input type="button"
+						class="btn btn-danger" value="問い合わせ確認" />
 				</div>
 			</div>
 
@@ -86,7 +89,8 @@
 				<div
 					style="display: block; margin-top: 10px; text-align: center; padding-bottom: 10px;">
 					<input type="button" class="btn btn-success" value="顧客情報編集" /> <input
-						type="button" class="btn btn-warning" value="TODO追加" />
+						type="button" class="btn btn-warning" value="TODO追加"
+						onclick="PF('dlg1').show();" />
 				</div>
 			</div>
 
@@ -103,10 +107,30 @@
 				<div
 					style="display: block; margin-top: 10px; text-align: center; padding-bottom: 10px;">
 					<input type="button" class="btn btn-success" value="顧客情報編集" /> <input
-						type="button" class="btn btn-warning" value="TODO追加" />
+						type="button" class="btn btn-warning" value="TODO追加"
+						onclick="PF('dlg1').show();" />
 				</div>
 			</div>
 		</div>
+	</h:form>
+
+	<h:form>
+		<p:dialog header="Modal Dialog" widgetVar="dlg1" modal="true">
+			<p:panelGrid columns="2" style="width:100%;font-size:0.8em;">
+				<h:outputText value="Category" />
+				<p:selectOneListbox>
+					<f:selectItem itemLabel="category1" itemValue="0" />
+					<f:selectItem itemLabel="category2" itemValue="1" />
+					<f:selectItem itemLabel="category3" itemValue="2" />
+					<f:selectItem itemLabel="category4" itemValue="3" />
+				</p:selectOneListbox>
+
+				<h:outputText id="display" />
+				<p:inputTextarea counter="display" maxlength="600"
+					counterTemplate="TODO起票　残{0}文字" autoResize="false"
+					style="width:100%;min-height:140px;" placeholder="todoを起票してください" />
+			</p:panelGrid>
+		</p:dialog>
 	</h:form>
 </h:body>
 </html>

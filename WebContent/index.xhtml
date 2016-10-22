@@ -10,7 +10,8 @@
 </h:head>
 <h:body>
 	<h:form>
-		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="TODO管理" type="button" onclick="jumpToMyCliList();" />
+		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="mock1" type="button" onclick="jumpToMyCliList();" />
+		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="mock2" type="button" onclick="jumpToAddTodo();" />
 		<p:button value="func2" icon="ui-icon-star">
 		</p:button>
 		<p:button value="func3" icon="ui-icon-star">
@@ -20,6 +21,10 @@
 	<script>
 		var jumpToMyCliList = function(){
 			location.href = "./my_client_list.jsf";
+		}
+		
+		var jumpToAddTodo = function(){
+			location.href = "./add_todo.jsf";
 		}
 	</script>
 </h:body>
