@@ -16,7 +16,13 @@
 		<p:outputLabel value="Pass" ></p:outputLabel>
 		<p:inputText></p:inputText>
 		<br/>
-		<p:button value="Login"></p:button>
+		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="Login" type="button" onclick="login();" />
 	</h:form>
+	<script>
+		var login = function(){
+			location.href = "./index.jsf";
+		}
+		
+	</script>
 </h:body>
 </html>
