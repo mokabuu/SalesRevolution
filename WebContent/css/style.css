@@ -1,0 +1,24 @@
+.ui-widget-header {
+    border: 0px solid #dddddd;
+    background: rgba(0,0,0,0.4);
+    color: #eee;
+    font-weight: bold;
+}
+
+/* ごめん！こいつ影響範囲でかいからデグるかも！ */
+.ui-widget-content {
+    border: 0px solid #dddddd;
+    background: rgba(0,0,0,0.4);
+    color: #eee;
+    margin: 5px;
+}
+
+.ui-state-default{
+	border: 0px solid #dddddd;
+    background: rgba(0,0,0,0.4);
+    font-weight: bold;
+    color: #eee;
+    margin: 0.5em;
+    width: 70px;
+    height: 70px;
+}

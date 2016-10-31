@@ -7,54 +7,73 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet"
+		type="text/css" href="./css/style.css" />
+	<link xmlns="http://www.w3.org/1999/xhtml"
+		href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<script xmlns="http://www.w3.org/1999/xhtml"
+		src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </h:head>
-<h:body>
+<!-- コンポーネントのUI見やすくするのに一回仮で背景つけます -->
+<h:body
+	style="background-image:url('http://backgrounds-free.com/highresolution/l_100.png');">
 	<h:form>
-		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="mock1" type="button" onclick="jumpToMyCliList();" />
-		<input class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left" value="mock2" type="button" onclick="jumpToAddTodo();" />
-		<p:button value="func2" icon="ui-icon-star">
+		<input
+			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+			value="mock1" type="button" onclick="jumpToMyCliList();" />
+		<input
+			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+			value="mock2" type="button" onclick="jumpToAddTodo();" />
+		<p:button value="func2">
 		</p:button>
-		<p:button value="func3" icon="ui-icon-star">
+		<p:button value="func3">
 		</p:button>
-<div style="height:500px">
-    <h:form>
-        <p:growl id="msgs" showDetail="true" />
- 
-        <p:dashboard id="board" model="#{dashboardView.model}">
-            <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs" />
- 
-            <p:panel id="sports" header="スターバックス">
-                <h:outputText value="依頼中(1)" /><br />
-                <h:outputText value="解答済み(4)" />
-            </p:panel>
- 
-            <p:panel id="finance" header="上島コーヒー">
-                <h:outputText value="依頼中(1)" /><br />
-                <h:outputText value="解答済み(4)" />
-            </p:panel>
- 
-            <p:panel id="lifestyle" header="WorksApplications">
-                <h:outputText value="依頼中(1)" /><br />
-                <h:outputText value="解答済み(4)" />
-            </p:panel>
- 
-            <p:panel id="weather" header="LegentApplications">
-                <h:outputText value="依頼中(1)" /><br />
-                <h:outputText value="解答済み(4)" />
-            </p:panel>
-        </p:dashboard>
- 
-        <div style="clear:both" />
-    </h:form>
-</div>
+		<div style="height: 500px">
+			<h:form>
+				<p:growl id="msgs" showDetail="true" />
+				<!-- ごめん！panelの動作確認したかったから一回外側コメントアウトしてしまった！
+				<p:dashboard id="board" model="#{dashboardView.model}">
+					<p:ajax event="reorder" listener="#{dashboardView.handleReorder}"
+						update="msgs" />
+ -->
+				<p:panel id="sports" header="スターバックス">
+					<h:outputText value="依頼中(1)" />
+					<br />
+					<h:outputText value="解答済み(4)" />
+				</p:panel>
+
+				<p:panel id="finance" header="上島コーヒー">
+					<h:outputText value="依頼中(1)" />
+					<br />
+					<h:outputText value="解答済み(4)" />
+				</p:panel>
+
+				<p:panel id="lifestyle" header="WorksApplications">
+					<h:outputText value="依頼中(1)" />
+					<br />
+					<h:outputText value="解答済み(4)" />
+				</p:panel>
+
+				<p:panel id="weather" header="LegentApplications">
+					<h:outputText value="依頼中(1)" />
+					<br />
+					<h:outputText value="解答済み(4)" />
+				</p:panel>
+				<!-- </p:dashboard> -->
+
+				<div style="clear: both" />
+			</h:form>
+		</div>
 	</h:form>
-	
+
 	<script>
-		var jumpToMyCliList = function(){
+		var jumpToMyCliList = function() {
 			location.href = "./my_client_list.jsf";
 		}
-		
-		var jumpToAddTodo = function(){
+
+		var jumpToAddTodo = function() {
 			location.href = "./add_todo.jsf";
 		}
 	</script>
