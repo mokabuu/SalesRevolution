@@ -33,35 +33,23 @@
 		<div style="height: 500px">
 			<h:form>
 				<p:growl id="msgs" showDetail="true" />
-				<!-- ごめん！panelの動作確認したかったから一回外側コメントアウトしてしまった！
 				<p:dashboard id="board" model="#{dashboardView.model}">
 					<p:ajax event="reorder" listener="#{dashboardView.handleReorder}"
 						update="msgs" />
- -->
-				<p:panel id="sports" header="スターバックス">
-					<h:outputText value="依頼中(1)" />
+				<p:panel id="sports" header="ToDo Information">
+					<h:outputText value="上島コーヒー[!](アイコン)"></h:outputText>>
 					<br />
-					<h:outputText value="解答済み(4)" />
+					<h:outputText value="スターバックス[○](アイコン)" />
+					<br />
+					<h:outputText value="WorksApplications[△]" />
 				</p:panel>
 
-				<p:panel id="finance" header="上島コーヒー">
-					<h:outputText value="依頼中(1)" />
+				<p:panel id="finance" header="よく使うアプリケーション">
+					<h:outputText value="リアルタイムMTG(アイコン)" />
 					<br />
-					<h:outputText value="解答済み(4)" />
+					<h:outputText value="問い合わせ管理(アイコン)" />
 				</p:panel>
-
-				<p:panel id="lifestyle" header="WorksApplications">
-					<h:outputText value="依頼中(1)" />
-					<br />
-					<h:outputText value="解答済み(4)" />
-				</p:panel>
-
-				<p:panel id="weather" header="LegentApplications">
-					<h:outputText value="依頼中(1)" />
-					<br />
-					<h:outputText value="解答済み(4)" />
-				</p:panel>
-				<!-- </p:dashboard> -->
+				</p:dashboard>
 
 				<div style="clear: both" />
 			</h:form>

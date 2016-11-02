@@ -19,7 +19,8 @@ import org.primefaces.model.DefaultDashboardModel;
 @ViewScoped
 public class DashboardView implements Serializable {
      
-    private DashboardModel model;
+	private static final long serialVersionUID = -6685289578877969950L;
+	private DashboardModel model;
      
     @PostConstruct
     public void init() {
