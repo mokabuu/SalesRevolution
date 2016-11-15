@@ -5,7 +5,7 @@ import com.salesrevolution.client.model.ClientInfo;
 /**
  * 
  * @author mokabuu
- * @param ClientInfo
+ * @param TodoInfo
  * @return String
  * 
  * 渡されら顧客情報を元に一覧画面に表示するhtmlを生成する

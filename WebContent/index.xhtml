@@ -21,14 +21,14 @@
 	style="background-image:url('http://backgrounds-free.com/highresolution/l_100.png');">
 	<h:form>
 		<input
-			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left icon"
 			value="mock1" type="button" onclick="jumpToMyCliList();" />
 		<input
-			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left"
+			class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left icon"
 			value="mock2" type="button" onclick="jumpToAddTodo();" />
-		<p:button value="func2">
+		<p:button value="func2" class="icon">
 		</p:button>
-		<p:button value="func3">
+		<p:button value="func3" class="icon">
 		</p:button>
 		<div style="height: 500px">
 			<h:form>
@@ -36,19 +36,19 @@
 				<p:dashboard id="board" model="#{dashboardView.model}">
 					<p:ajax event="reorder" listener="#{dashboardView.handleReorder}"
 						update="msgs" />
-				<p:panel id="sports" header="ToDo Information">
-					<h:outputText value="上島コーヒー[!](アイコン)"></h:outputText>
-					<br />
-					<h:outputText value="スターバックス[○](アイコン)" />
-					<br />
-					<h:outputText value="WorksApplications[△]" />
-				</p:panel>
+					<p:panel id="sports" header="ToDo Information">
+						<h:outputText value="上島コーヒー[!](アイコン)"></h:outputText>
+						<br />
+						<h:outputText value="スターバックス[○](アイコン)" />
+						<br />
+						<h:outputText value="WorksApplications[△]" />
+					</p:panel>
 
-				<p:panel id="finance" header="よく使うアプリケーション">
-					<h:outputText value="リアルタイムMTG(アイコン)" />
-					<br />
-					<h:outputText value="問い合わせ管理(アイコン)" />
-				</p:panel>
+					<p:panel id="finance" header="よく使うアプリケーション">
+						<h:outputText value="リアルタイムMTG(アイコン)" />
+						<br />
+						<h:outputText value="問い合わせ管理(アイコン)" />
+					</p:panel>
 				</p:dashboard>
 
 				<div style="clear: both" />
@@ -56,13 +56,37 @@
 		</div>
 	</h:form>
 
+	<!-- dialog -->
+	<p:dialog header="TODO起票" widgetVar="add_todo" modal="true"
+		height="400">
+		<p:panelGrid columns="2">
+			<h:outputText value="お客様名" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{TodoList.clientName}" />
+
+			<h:outputText value="優先度" />
+			<p:rating style="color:#444;border-radius: 10px;"
+				value="#{TodoList.priority}" />
+
+			<h:outputText value="締切" />
+			<p:calendar style="color:#444;border-radius: 10px;" value="#{TodoList.dueDate}" />
+
+			<h:outputText value="内容" />
+			<p:inputTextarea style="color:#444;border-radius: 10px;" rows="6"
+				cols="30" value="#{TodoList.content}" />
+		</p:panelGrid>
+		<hr />
+		<p:button value="save">
+		</p:button>
+	</p:dialog>
+
 	<script>
 		var jumpToMyCliList = function() {
 			location.href = "./my_client_list.jsf";
 		}
 
 		var jumpToAddTodo = function() {
-			location.href = "./add_todo.jsf";
+			PF('add_todo').show();
 		}
 	</script>
 </h:body>
