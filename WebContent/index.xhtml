@@ -60,16 +60,22 @@
 	<p:dialog header="TODO起票" widgetVar="add_todo" modal="true"
 		height="400">
 		<p:panelGrid columns="2">
-			<h:outputText value="お客様名" />
+			<h:outputText value="タイトル" />
 			<h:inputText style="color:#444;border-radius: 10px;"
-				value="#{TodoList.clientName}" />
+				value="#{TodoList.title}" />
+
+			<h:outputText value="お客様名" />
+			<p:autoComplete style="color:#444;border-radius: 10px;"
+				forceSelection="true" value="#{TodoList.clientName}"
+				completeMethod="#{TodoList.completeText}" />
 
 			<h:outputText value="優先度" />
 			<p:rating style="color:#444;border-radius: 10px;"
 				value="#{TodoList.priority}" />
 
 			<h:outputText value="締切" />
-			<p:calendar style="color:#444;border-radius: 10px;" value="#{TodoList.dueDate}" />
+			<p:calendar style="color:#444;border-radius: 10px;"
+				value="#{TodoList.dueDate}" />
 
 			<h:outputText value="内容" />
 			<p:inputTextarea style="color:#444;border-radius: 10px;" rows="6"
