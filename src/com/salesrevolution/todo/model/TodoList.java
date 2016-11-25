@@ -10,6 +10,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 
+import com.datastax.driver.core.Session;
+import com.salesrevolution.util.DBConnection;
+
 @RequestScoped
 @Named
 @ManagedBean(name = "TodoList")
@@ -105,19 +108,23 @@ public class TodoList {
 	public List<String> completeText(String query) {
 		List<String> clients = new ArrayList<String>();
 		List<String> results = new ArrayList<String>();
-		
+
 		clients.add("MocksApplications");
 		clients.add("原尾コーポレーション");
 		clients.add("大藪証券");
 		clients.add("高山不動産");
 		clients.add("Bar Imamura");
 		clients.add("山小屋つねやま");
-		
-		for(String client : clients){
-			if(client.startsWith(query)){
+
+		for (String client : clients) {
+			if (client.startsWith(query)) {
 				results.add(client);
 			}
 		}
+
+		//test code
+		Session session = DBConnection.connect();
+		session.execute("select * from TODO;");
 
 		return results;
 	}
