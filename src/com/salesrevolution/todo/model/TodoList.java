@@ -10,7 +10,11 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 
+import com.datastax.driver.core.PreparedStatement;
+import com.datastax.driver.core.ResultSet;
+import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
+import com.datastax.driver.core.Statement;
 import com.salesrevolution.util.DBConnection;
 
 @RequestScoped
@@ -122,9 +126,13 @@ public class TodoList {
 			}
 		}
 
-		//test code
+		// test code
 		Session session = DBConnection.connect();
-		session.execute("select * from TEST.TODO;");
+		// session.execute("INSERT INTO tsune.users (id, name) VALUES ('4545', 'shikotch');");
+		ResultSet rs = session.execute("select * from tsune.users");
+		for (Row row : rs) {
+			System.out.println(row);
+		}
 
 		return results;
 	}
