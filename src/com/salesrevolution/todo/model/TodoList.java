@@ -124,7 +124,7 @@ public class TodoList {
 
 		//test code
 		Session session = DBConnection.connect();
-		session.execute("select * from TODO;");
+		session.execute("select * from TEST.TODO;");
 
 		return results;
 	}
