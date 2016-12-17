@@ -22,3 +22,63 @@
     width: 70px;
     height: 70px;
 }
+
+.mainmenu-header{
+	background: #555;
+	height: 40px;
+	text-align: center;
+}
+.mainmenu-serch-input {
+	background: #FFFFFF;
+	margin-top: 8px;
+	width: 400px;
+}
+
+.mainmenu-user-background-area {
+	height: 200px;
+	background: #6ACCCB;
+}
+
+.mainmenu-tag-area {
+	height: 40px;
+	background: #FFFFFF;
+	border-bottom-color: #999;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.mainmenu-tag-span {
+	width: 200px;
+	float: left;
+	height: 40px;
+}
+
+.mainmenu-tag-icon {
+	color: #999;
+	background: #FFFFFF;
+	border: none;
+	margin-top:4px;
+}
+
+.mainmenu-form-filter-area {
+	min-width: 200px;
+	min-height: 800px;
+	background: #FFFFFF;
+	float: left;
+	border-right-color: #999;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.mainmenu-form-filter-list {
+	list-style-type: none;
+	margin-top: 16px;
+	margin-left: -24px;
+	
+}
+
+.mainmenu-form-content-area {
+	min-height: 800px;
+	background: #FFFFFF;
+}
+
