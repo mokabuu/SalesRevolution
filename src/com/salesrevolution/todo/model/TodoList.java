@@ -1,5 +1,7 @@
 package com.salesrevolution.todo.model;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,6 +11,8 @@ import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
+
+import org.apache.commons.dbutils.DbUtils;
 
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.ResultSet;
@@ -125,12 +129,29 @@ public class TodoList {
 				results.add(client);
 			}
 		}
+		
+		Connection con = null;
+		java.sql.PreparedStatement ps = null;
+		java.sql.ResultSet rs = null;
+		try{
+			con = DBConnection.mysqlConnect();
+			ps = con.prepareStatement("select * from user");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				System.out.println(rs.getString(1));
+			}
+		}catch(SQLException e){
+			System.out.println(e);
+			e.printStackTrace();
+		}finally{
+			DbUtils.closeQuietly(con, ps, rs);
+		}
 
 		// test code
 		Session session = DBConnection.connect();
 		// session.execute("INSERT INTO tsune.users (id, name) VALUES ('4545', 'shikotch');");
-		ResultSet rs = session.execute("select * from tsune.users");
-		for (Row row : rs) {
+		ResultSet crs = session.execute("select * from tsune.users");
+		for (Row row : crs) {
 			System.out.println(row);
 		}
 
