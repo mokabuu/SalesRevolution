@@ -1,4 +1,4 @@
-package com.salesrevolution.main.model;
+package com.salesrevolution.main.component;
  
 import java.io.Serializable;
 import javax.annotation.PostConstruct;

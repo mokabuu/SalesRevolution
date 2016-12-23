@@ -1,16 +1,10 @@
 .ui-widget-header {
-    border: 0px solid #dddddd;
-    background: rgba(0,0,0,0.4);
-    color: #eee;
-    font-weight: bold;
+	border: 0px;
+	background: #FFFFFF;
 }
 
-/* ごめん！こいつ影響範囲でかいからデグるかも！ */
 .ui-widget-content {
-    border: 0px solid #dddddd;
-    background: rgba(0,0,0,0.4);
-    color: #eee;
-    margin: 5px;
+	border: 0px;
 }
 
 .icon{
@@ -23,23 +17,23 @@
     height: 70px;
 }
 
-.mainmenu-header{
+.home-header{
 	background: #555;
 	height: 40px;
 	text-align: center;
 }
-.mainmenu-serch-input {
+.home-serch-input {
 	background: #FFFFFF;
 	margin-top: 8px;
 	width: 400px;
 }
 
-.mainmenu-user-background-area {
+.home-user-background-area {
 	height: 200px;
 	background: #6ACCCB;
 }
 
-.mainmenu-tag-area {
+.home-tag-area {
 	height: 40px;
 	background: #FFFFFF;
 	border-bottom-color: #999;
@@ -47,20 +41,20 @@
 	border-bottom-style: solid;
 }
 
-.mainmenu-tag-span {
+.home-tag-span {
 	width: 200px;
 	float: left;
 	height: 40px;
 }
 
-.mainmenu-tag-icon {
+.home-tag-icon {
 	color: #999;
 	background: #FFFFFF;
 	border: none;
 	margin-top:4px;
 }
 
-.mainmenu-form-filter-area {
+.home-form-filter-area {
 	min-width: 200px;
 	min-height: 800px;
 	background: #FFFFFF;
@@ -68,17 +62,21 @@
 	border-right-color: #999;
 	border-right-width: 1px;
 	border-right-style: solid;
+	color: #555;
 }
 
-.mainmenu-form-filter-list {
+.home-form-filter-list {
 	list-style-type: none;
 	margin-top: 16px;
 	margin-left: -24px;
 	
 }
 
-.mainmenu-form-content-area {
+.home-form-content-area {
 	min-height: 800px;
-	background: #FFFFFF;
+	background-color: #FFFFFF;
 }
 
+.home-form-content-ain-area {
+	float: left;
+}

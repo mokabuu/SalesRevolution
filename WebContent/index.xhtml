@@ -20,26 +20,45 @@
 <h:body
 	style="background-image:url('http://backgrounds-free.com/highresolution/l_100.png');">
 	<h:form>
-		<div class="mainmenu-header">
-			<h:inputText class="mainmenu-serch-input" />
+		<div class="home-header">
+			<h:inputText class="home-serch-input" />
 		</div>
-		<div class="mainmenu-user-background-area"></div>
-		<div class="mainmenu-tag-area">
-			<span class="mainmenu-tag-span" />
-			<p:button class="mainmenu-tag-icon" value="ホーム" />
-			<p:button class="mainmenu-tag-icon" value="カレンダー" />
-			<p:button class="mainmenu-tag-icon" value="依頼" />
-		</div>
-		<div class="mainmenu-form-filter-area">
-			<UL class="mainmenu-form-filter-list">
-				<li><h:outputText value="フィード"></h:outputText>
-					<ul class="mainmenu-form-filter-list">
-						<li><h:outputText value="全てのフィード"></h:outputText></li>
-					</ul></li>
-			</UL>
-		</div>
-		<div class="mainmenu-form-content-area">
-			<h:outputText value="原尾泰毅  to  Scheduler team"></h:outputText>
+		<div class="home-user-background-area"></div>
+		<!-- main form area using tab -->
+		<div class="home-form-content-area">
+				<h:form id="form">
+					<p:growl id="msgs" showDetail="true" />
+					<p:tabView>
+						<p:tab title="ホーム">
+							<div class="home-form-filter-area">
+								<UL class="home-form-filter-list">
+									<li><h:outputText value="フィード"></h:outputText>
+									<ul class="home-form-filter-list">
+									<li><h:outputText value="全てのフィード"></h:outputText></li>
+									</ul></li>
+								</UL>
+							</div>
+							<div class="home-form-content-main-area">
+								<h:panelGrid columns="2" cellpadding="10">
+									<p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                					<h:outputText
+            	       						 value="The story begins as Don Vito Corleone..." />
+								</h:panelGrid>
+							</div>
+    	    			</p:tab>
+						<p:tab title="カレンダー">
+							<h:panelGrid columns="2" cellpadding="10">
+								<p:graphicImage name="demo/images/godfather/godfather2.jpg" />								<h:outputText value="Francis Ford Coppola's legendary..." />
+							</h:panelGrid>
+						</p:tab>
+						<p:tab title="依頼">
+							<h:panelGrid columns="2" cellpadding="10">
+								<p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+								<h:outputText value="After a break of more than 15 years..." />
+							</h:panelGrid>
+						</p:tab>
+					</p:tabView>
+			</h:form>
 		</div>
 		<div class="other">
 			<input
