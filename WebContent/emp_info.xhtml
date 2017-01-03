@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet"
+		type="text/css" href="./css/style.css" />
+	<link xmlns="http://www.w3.org/1999/xhtml"
+		href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<script xmlns="http://www.w3.org/1999/xhtml"
+		src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</h:head>
+<!-- コンポーネントのUI見やすくするのに一回仮で背景つけます -->
+<h:body
+	style="background-image:url('http://backgrounds-free.com/highresolution/l_100.png');">
+	<h:form>
+		<p:panelGrid columns="2">
+			<h:outputText value="社員ID" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.emp_id}" />
+
+			<h:outputText value="苗字" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.lastname}" />
+
+			<h:outputText value="名前" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.firstname}" />
+
+			<h:outputText value="ミドルネーム" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.middlename}" />
+
+			<h:outputText value="性別" />
+			<p:selectOneRadio id="console" value="#{EmpInfoDao.sex}">
+				<f:selectItem itemLabel="男" itemValue="0" />
+				<f:selectItem itemLabel="女" itemValue="1" />
+			</p:selectOneRadio>
+
+			<h:outputText value="大学" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.uni_code}" />
+
+			<h:outputText value="メールアドレス" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.email}" />
+
+			<h:outputText value="LINE" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.line}" />
+
+			<h:outputText value="Twitter" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.twitter}" />
+
+			<h:outputText value="Facebook" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.facebook}" />
+
+			<h:outputText value="会社" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.emp_com}" />
+
+			<h:outputText value="所属" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.emp_sec}" />
+
+			<h:outputText value="役職" />
+			<h:inputText style="color:#444;border-radius: 10px;"
+				value="#{EmpInfoDao.emp_class}" />
+		</p:panelGrid>
+		<hr />
+		<p:button value="save" action='#{EmpInfoDao.insertEmpInfo}'>
+		</p:button>
+	</h:form>
+</h:body>
+</html>
